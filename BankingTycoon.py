@@ -5,12 +5,12 @@ TO DO LIST:
 Fixing Advertisements (accepting advertisements)
 """
 
-import random, replit, time, math
+import random, time, math, os
 from termcolor import cprint
 from colorama import *
 
 init()
-replit.clear()
+os.system('clear')
 
 # Unrelated
 TimeToWork = 0
@@ -101,7 +101,7 @@ TypesOfAdvertisement = ["a Radio", "a TV Series", "a Movie Series", "a Social Me
 # THE ACTUAL PROGRAM WHERE STUFF HAPPENS
 
 def GetToWork():
-    replit.clear()
+    os.system('clear')
     global money, customers, gear_upgrade, staff_upgrade, security_upgrade, paperwork_price, current_location, gear_upgrade_price, security_upgrade_price, staff_upgrade_price, employees, TimeToWork, Staff_payment
 
     TimeToWork = TimeToWork + 1
@@ -133,7 +133,7 @@ ___________________________________
             time.sleep(0.01)
             money = money - 10000
             print("Your Money: " + Fore.GREEN + "$" + str(money) + Fore.RESET)
-            replit.clear()
+            os.system('clear')
 
             if money <= 0:
                 cprint("GAME OVER", "red")
@@ -172,7 +172,7 @@ ___________________________________
 
     # Give out Loans
     if choice == "1":
-        replit.clear()
+        os.system('clear')
         wantedLoan = random.randint(100, 1000)
 
         if money < wantedLoan:
@@ -228,7 +228,7 @@ ___________________________________
             money = money + Chosen_price
             print("Your balance is now: " + Fore.GREEN + "$" + str(money) + Fore.RESET)
             time.sleep(2)
-            replit.clear() 
+            os.system('clear')
             GetToWork()
         
         if yn == "n":
@@ -262,7 +262,7 @@ ___________________________________
         yn = input("y/n: ")
 
         if yn == "y":
-            replit.clear()
+            os.system('clear')
             print("You have given out the loan of " + Fore.GREEN + "$" + str(bankInvestment) + Fore.RESET + " Only time will tell if this was good or not!")
             time.sleep(3)
 
@@ -287,7 +287,7 @@ ___________________________________
                 GetToWork()
 
         if yn == "n":
-            replit.clear()
+            os.system('clear')
             print("You refused to invest in the business!")
             print("Maybe you would've made more money.")
             time.sleep(3)
@@ -313,7 +313,7 @@ ___________________________________
         time.sleep(2)
         customersLost = random.randint(1, 50)
         customersGained = random.randint(1, 50)
-        replit.clear()
+        os.system('clear')
         print(Fore.RED + "You lost: " + str(customersLost) + " customers" + Fore.RESET)
         print(Fore.GREEN + "But you also gained: " + str(customersGained) + " customers" + Fore.RESET)
         customers = customers - customersLost
@@ -340,7 +340,7 @@ ___________________________________
         yn = input("y/n: ")
 
         if yn == "y":
-            replit.clear()
+            os.system('clear')
             print(Fore.RED + "GAME OVER!" + Fore.RESET)
             print("You've just gone bankrupt... i can't tell if this was dumb or smart.")
             print(Fore.RED + "Your Balance: $" + "-100000" + Fore.RESET)
@@ -349,7 +349,7 @@ ___________________________________
 
     # Leave work
     if choice == "8":
-        replit.clear()
+        os.system('clear')
         print("Exiting work and going home...")
         time.sleep(3)
         Menu()
@@ -357,7 +357,7 @@ ___________________________________
 ################################### MAIN MENU ##################################
 
 def Menu():
-    replit.clear()
+    os.system('clear')
     global money, customers, gear_upgrade, staff_upgrade, security_upgrade, paperwork_price, current_location, gear_upgrade_price, security_upgrade_price, staff_upgrade_price, employees, Staff_payment
 
     if money <= 0:
@@ -388,8 +388,8 @@ You won, but also lost. Better luck next time.""" + Fore.RESET)
             time.sleep(0.01)
             money = money - 1000
             cprint("Money: " + Fore.GREEN + "$" + str(money) + Fore.RESET)
-            replit.clear()
-
+            os.system('clear')
+       
             if money <= 0:
                 cprint("GAME OVER", "red")
                 print(Fore.GREEN + """
@@ -424,7 +424,7 @@ ___________________________________
         if money < gear_upgrade_price:
             print("You do not have enough for this upgrade!")
             time.sleep(3)
-            replit.clear()
+            os.system('clear')
             Menu()
         
         if gear_upgrade == 5:
@@ -443,10 +443,10 @@ ___________________________________
             print("Your Equipment Level is now: " + str(gear_upgrade))
             gear_upgrade_price = gear_upgrade_price + 500
             time.sleep(3)
-            replit.clear()
+            os.system('clear')
             Menu()
         if yn == "n":
-            replit.clear()
+            os.system('clear')
             Menu()
 
     # Security Upgrade
@@ -454,7 +454,7 @@ ___________________________________
         if money < security_upgrade_price:
             print("You do not have enough money for this upgrade!")
             time.sleep(3)
-            replit.clear
+            os.system('clear')
             Menu() 
         
         if security_upgrade == 5:
@@ -473,11 +473,11 @@ ___________________________________
             print("Your Security Level is now: " + str(security_upgrade))
             security_upgrade_price = security_upgrade_price + 500
             time.sleep(3)
-            replit.clear()
+            os.system('clear')
             Menu()
         
         if yn == "n":
-            replit.clear()
+            os.system('clear')
             Menu()
 
     # Staff Upgrade
@@ -485,7 +485,7 @@ ___________________________________
         if money < staff_upgrade_price:
             print("You do not have enough money for this upgrade!")
             time.sleep(3)
-            replit.clear()
+            os.system('clear')
             Menu()
 
         if staff_upgrade == 5:
@@ -506,7 +506,7 @@ ___________________________________
             print("You now have " + str(employees) + " employees")
             staff_upgrade_price = staff_upgrade_price + 250
             time.sleep(3)
-            replit.clear()
+            os.system('clear')
             Menu()
         
         if yn == "n":
@@ -524,7 +524,7 @@ ___________________________________
         chanceOfRobbery = random.randint(1, 100)
         if security_upgrade == 1:
             if chanceOfRobbery < 50:
-                replit.clear()
+                os.system('clear')
                 print(Fore.RED + "BEWARE!" + Fore.RESET)
                 print("Robbery incoming!")
                 print("3...")
@@ -541,7 +541,7 @@ ___________________________________
 
         if security_upgrade == 2:
             if chanceOfRobbery < 40:
-                replit.clear()
+                os.system('clear')
                 print(Fore.RED + "BEWARE!" + Fore.RESET)
                 print("Robbery incoming!")
                 print("3...")
@@ -563,7 +563,7 @@ ___________________________________
         
         if security_upgrade == 3:
             if chanceOfRobbery < 30:
-                replit.clear()
+                os.system('clear')
                 print(Fore.RED + "BEWARE!" + Fore.RESET)
                 print("Robbery incoming!")
                 print("3...")
@@ -585,7 +585,7 @@ ___________________________________
         
         if security_upgrade == 4:
             if chanceOfRobbery < 20:
-                replit.clear()
+                os.system('clear')
                 print(Fore.RED + "BEWARE!" + Fore.RESET)
                 print("Robbery incoming!")
                 print("3...")
@@ -607,7 +607,7 @@ ___________________________________
         
         if security_upgrade == 5:
             if chanceOfRobbery < 10:
-                replit.clear()
+                os.system('clear')
                 print(Fore.RED + "BEWARE!" + Fore.RESET)
                 print("Robbery incoming!")
                 print("3...")
@@ -629,7 +629,7 @@ ___________________________________
 
 
         money = money - advertise_price
-        replit.clear()
+        os.system('clear')
         print("You paid: " + Fore.RED + "$" + str(advertise_price) + Fore.RESET)
         print("Printing Posters...")
         time.sleep(2)
@@ -645,12 +645,12 @@ ___________________________________
         money = money + NC_Money
         print("You earned " + Fore.GREEN + "$" + str(NC_Money) + Fore.RESET + " from new customers signing up!")
         time.sleep(3)
-        replit.clear()
+        os.system('clear')
         Menu()
 
 ###################### MOVING BANK LOCATIONS ###################################
     if choice == "5":
-        replit.clear()
+        os.system('clear')
         print("You have decided to move your bank location to bigger cities for more money! But where do you choose? And what can you afford?")
         print("1. Dubai (" + Fore.GREEN + "$" + str(Dubai_price) + Fore.RESET + ")")
         print("2. Moscow (" + Fore.GREEN + "$" + str(Moscow_price) + Fore.RESET + ")")
